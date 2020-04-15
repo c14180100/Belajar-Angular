@@ -1,0 +1,58 @@
+<hello name="{{ name }}"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p>
+<br>
+25 + 25 = {{25+25}}
+
+<br><br>
+
+<input [(ngModel)]="a" type="text"/> *
+<input [(ngModel)]="b" type="text">
+= {{a*b}}
+
+<br><br>
+
+{{item.name}} - {{item.harga | currency:'Rp'}}
+
+<div *ngFor="let fruit of item">
+  {{fruit.name}} - {{fruit.harga | currency:'Rp'}}
+</div>
+
+<br><br>
+
+<div *ngFor="let fruit of item; let i = index">
+  {{i+1}}.{{fruit.name}} - {{fruit.harga | currency:'Rp'}}
+</div>
+
+<br><br>
+
+<div *ngFor="let data of itemArr">
+  {{data}}
+</div>
+
+<br><br>
+
+<p>Show this all the time</p>
+<p *ngIf="show">Show this if only "show" is true</p>
+
+<br><br>
+
+<ng-template
+  *ngIf="show; then showBlock; else notShowBlock">
+</ng-template>
+<ng-template #showBlock>
+  <p>Show this if only "show" is true</p>
+</ng-template>
+<ng-template #notShowBlock>
+  <p>Show this if only "show" is false</p>
+</ng-template>
+
+<br><br>
+
+<button (click)="EventKlik()">Tekan</button>
+{{Pesan}}
+
+
+<input (keyup)="onKey($event)">
+  <p>{{values}}</p>
